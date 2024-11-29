@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>테이블 예제</title>
+  <style>
+    main {
+      display: grid;
+      /* Grid 레이아웃 활성화 */
+      place-items: center;
+      /* 수평 및 수직 중앙 정렬 */
+      height: 100vh;
+      /* 화면 전체 높이 */
+    }
+
+    table,
+    th,
+    td {
+      border: 1px dotted black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <td colspan="4" style="background-color: lightblue">
+            1
+          </td>
+        </tr>
+      </thead>
+      <tr>
+        <td colspan="2" rowspan="2" style="width: 100px; height: 100px">
+          5
+        </td>
+        <td>7</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td colspan="2">13</td>
+        <td colspan="2">15</td>
+      </tr>
+    </table>
+  </main>
+</body>
+
+</html>

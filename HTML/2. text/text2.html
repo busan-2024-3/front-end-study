@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>텍스트2</title>
+  </head>
+  <body>
+    <!--
+				목록을 만드는 태그 ul, ol, dl
+				<ol> : 순서가 있는 목록(ordered list)
+				<ul> : 순서가 없는 목록(unordered list)
+					<li> : 목록 요소(list item)
+				<dl> : 용어를 설명하는 목록(description list)
+					<dt> : 정의되는 용어의 제목(description term)
+					<dd> : 용어에 대한 설명(description definition)
+			-->
+    <h1>Front-end 학습</h1>
+    <!-- <ol> 순서가 있는 목록 -->
+    <ol>
+      <li>HTML/CSS</li>
+      <li>javascript</li>
+      <ul>
+        <li>데이터 타입</li>
+        <li>내장 함수</li>
+        <li>DOM 객체</li>
+      </ul>
+    </ol>
+    <h1>쇼핑 목록</h1>
+    <!-- <ul> : 순서가 없는 목록 태그 -->
+    <!-- square, disc, circle -->
+    <ul style="list-style-type: square">
+      <li>컵라면</li>
+      <li>삼각김밥</li>
+      <li>스트링 치즈</li>
+    </ul>
+
+    <ol type="a" start="2">
+      <li>첫번째 요소</li>
+      <li>두번째 요소</li>
+      <li>세번째 요소</li>
+    </ol>
+
+    <dl>
+      <dt>Block Element</dt>
+      <dd>포함된 내용만으로 한 라인을 독점</dd>
+      <dd>영역, 구조를 만들 때 사용</dd>
+      <dd>레이아웃 구성</dd>
+      <dt>Inline Element</dt>
+      <dd>
+        포함된 내용과 앞 뒤 태그의 내용을 같은라인에 출력
+      </dd>
+      <dd>문서를 구성하는 역할</dd>
+      <dd>블록요소나 다른 인라인 요소 안에서 쓰인다</dd>
+      <dt>Void Element</dt>
+      <dd>
+        시작태그와 끝 태그 사이에 아무것도 포함되지 않은
+        요소
+      </dd>
+      <dd>비어있는 요소가 항상 인라인 요소는 아님</dd>
+      <dd>자기폐쇄형 요소</dd>
+      <dd>
+        콘텐츠를 가지지 않으므로 비어있지 않은 요소가 될 수
+        없다.
+      </dd>
+      <dt>Non-void Element</dt>
+      <dd>
+        문자열이나 인라인 요소를 담을 수 있는 요소 (끝
+        태그가 존재)
+      </dd>
+      <dd>
+        콘텐츠를 가지지 않아도 닫는 태그를 넣어줘야 함
+      </dd>
+      <dd>다른 블록태그를 포함할 수 있음</dd>
+    </dl>
+    <a href="../home.html">홈으로</a>
+  </body>
+</html>

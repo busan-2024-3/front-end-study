@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>테이블 예제</title>
+  <style>
+    main {
+      display: grid;
+      /* Grid 레이아웃 활성화 */
+      place-items: center;
+      /* 수평 및 수직 중앙 정렬 */
+      height: 100vh;
+      /* 화면 전체 높이 */
+    }
+
+    table,
+    th,
+    td {
+      border: 1px dotted black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <table>
+      <caption>
+        <strong>Modern Browser</strong>
+        <p>국내에서 자주 사용하는 모던 브라우저</p>
+      </caption>
+      <tr>
+        <th>브라우저</th>
+        <th>제조업체</th>
+        <th>다운로드</th>
+      </tr>
+      <tr>
+        <td>크롬</td>
+        <td>Google</td>
+        <td>https://www.google.com/chrome</td>
+      </tr>
+      <tr>
+        <td>파이어폭스</td>
+        <td>Mozila</td>
+        <td>https://www.mozila.org/ko/firefox</td>
+      </tr>
+      <tr>
+        <td>엣지</td>
+        <td>Microsoft</td>
+        <td>https://www.microsoft.com</td>
+      </tr>
+    </table>
+  </main>
+</body>
+
+</html>

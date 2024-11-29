@@ -1,0 +1,33 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "eslint.validate": [
+        "javascript",
+        "css",
+        "html",
+        "markdown"
+    ],
+    "eslint.enable": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "emmet.showAbbreviationSuggestions": true,
+    "emmet.syntaxProfiles": {
+        "html": {
+            "tag_case": "lower",
+            "profile": "html5"
+        }
+    },
+    "editor.tabSize": 2, // 기본 들여쓰기 크기 (스페이스 개수)
+    "editor.insertSpaces": false, // true: 스페이스 사용, false: 탭 사용
+    "[html]": {
+        "editor.tabSize": 2 // HTML 파일은 2칸 들여쓰기
+    },
+    "[json]": {
+        "editor.tabSize": 4 // JSON 파일은 4칸 들여쓰기
+    },
+    "cSpell.words": [
+        "busan",
+        "htmlhint"
+    ]
+}
