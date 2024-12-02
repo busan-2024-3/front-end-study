@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form 태그의 종류</title>
+</head>
+
+<body>
+  <h1>[사용자 입력 폼 만들기]</h1>
+
+  <!-- 사용자 입력을 받아 서버로 보내 데이터를 처리할 내용을 담는 태그 -->
+  <!-- GET방식의 전송은 쿼리 스트링으로 보내는 데이터를 URL에 표시한다.
+		POST방식의 전송은 데이터를 URL에 표시하지 않는다.-->
+  <form action="" method="GET">
+    <!-- <fieldset>, <legend>
+			폼 요소를 그룹화 하고 그룹의 제목을 지정 -->
+    <fieldset>
+      <legend>분류 1</legend>
+      아이디 :
+      <input type="text" name="input-id" value="" />
+      <br />
+      비밀번호 입력란 :
+      <input type="password" />
+      <br />
+      이메일 입력란 :
+      <input type="email" />
+      <br />
+      URL :
+      <input type="url" />
+      <br />
+      숫자 입력란:
+      <input type="number" />
+      <br />
+      전화번호 입력란:
+      <input type="tel" />
+      <br />
+      검색:
+      <input type="search" placeholder="검색어를 입력하세요..." />
+      <br />
+      색상:
+      <input type="color" name="input-color" />
+      <br />
+      범위:
+      <input type="range" value="3" max="10" />
+      <br />
+      날짜:
+      <input type="date" name="" id="" />
+      <br />
+      날짜 시간:
+      <input type="datetime-local" name="" id="" />
+      <br />
+      월:
+      <input type="month" />
+      <br />
+      주:
+      <input type="week" name="" id="" />
+      <br />
+      시간:
+      <input type="time" name="" id="" />
+      <br />
+      파일:
+      <input type="file" name="" id="" />
+      <br />
+      이미지:
+      <input type="image" src="../1. image/images/ccc.jpg" alt="고양이" />
+      <br />
+    </fieldset>
+    <fieldset>
+      <legend>분류2</legend>
+      히든:
+      <input type="hidden" name="hidden-data" value="숨겨진 데이터" />
+      <br />
+      체크박스 :
+      <ul style="list-style: none">
+        <li>
+          <input type="checkbox" name="checkbox" value="111" checked />
+          정보처리기사
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" value="222" checked />
+          SQL
+        </li>
+        <li>
+          <input type="checkbox" name="checkbox" value="333" checked />
+          AWS
+        </li>
+      </ul>
+      <br />
+      라디오 :
+      <input type="radio" name="radio" value="N1" />
+      N1
+      <input type="radio" name="radio" value="N2" />
+      N2
+      <input type="radio" name="radio" value="N3" checked />
+      N3
+      <br />
+      셀렉트 :
+      <select name="select" id="">
+        <option value="1">선택1</option>
+        <option value="2">선택2</option>
+        <option value="3" selected>선택3</option>
+      </select>
+      <br />
+      여러 줄 입력란 :
+      <br />
+      <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력하세요">
+디폴트 입력값</textarea>
+      <br />
+      버튼 :
+      <br />
+      <ol>
+        <li>
+          <input type="button" value="버튼1" onclick="alert('ㅋㅋㅋ')" />
+        </li>
+        <li>
+          <input type="button" value="버튼2" onclick="buttonFunc()" />
+        </li>
+        <li>
+          <input type="button" value="홈으로" onclick="location.href='../home.html'" />
+        </li>
+      </ol>
+      <br />
+    </fieldset>
+    제출 :
+    <input type="submit" value="전송" />
+    <br />
+    리셋 :
+    <input type="reset" value="재입력" />
+    <br />
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>폼 예제</title>
+</head>
+
+<body>
+  <form action="" method="get">
+    <fieldset style="width: 200px">
+      <legend>회원정보</legend>
+      <label for="id">아이디:</label>
+      <input type="text" name="id" id="id" class="id" value="hong" />
+      <br />
+      <label for="password">패스워드:</label>
+      <input type="password" name="password" id="password" />
+      <br />
+    </fieldset>
+
+    <fieldset>
+      <legend>과목</legend>
+      <label for="HTML">HTML</label>
+      <input type="checkbox" name="subject" id="HTML" value="HTML" />
+      <label for="CSS">CSS</label>
+      <input type="checkbox" name="subject" id="CSS" value="CSS" checked />
+      <label for="JS">JS</label>
+      <input type="checkbox" name="subject" id="JS" value="JS" />
+      <br />
+      <br />
+
+      <label for="upper">상</label>
+      <input type="radio" name="grade" id="upper" value="상" />
+      <label for="middle">중</label>
+      <input type="radio" name="grade" id="middle" value="중" />
+      <label for="lower">하</label>
+      <input type="radio" name="grade" id="lower" value="하" />
+    </fieldset>
+    <input type="submit" value="전송" />
+    <input type="reset" value="취소" />
+  </form>
+</body>
+
+</html>
