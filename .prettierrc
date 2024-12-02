@@ -7,7 +7,9 @@
   "bracketSameLine": true,
   "printWidth": 60,
   "htmlWhitespaceSensitivity": "ignore",
+  "useTabs": false,
   "endOfLine": "lf",
+  "parser": "html",
   "overrides": [
     {
       "files": "*.json",

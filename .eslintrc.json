@@ -9,16 +9,26 @@
         "_": true,
         "browser": true
     },
-    "plugins": ["html", "import"],
+    "plugins": [
+        "prettier",
+        "html",
+        "import"
+    ],
     "extends": [
+        "plugin:prettier/recommended",
         "eslint:recommended",
         "airbnb-base",
         "prettier"
     ],
     "overrides": [
         {
-            "files": ["*.html", "*.js"],
-            "plugins": ["html"]
+            "files": [
+                "*.html",
+                "*.js"
+            ],
+            "plugins": [
+                "html"
+            ]
         }
     ],
     "rules": {
@@ -32,10 +42,13 @@
         "no-nested-ternary": "off",
         "max-classes-per-file": "off",
         "consistent-return": "off",
-        "no-restricted-syntax": ["off", "ForOfStatement"],
+        "no-restricted-syntax": [
+            "off",
+            "ForOfStatement"
+        ],
         "prefer-arrow-callback": "error",
         "require-await": "error",
-        "arrow-parens": ["error", "as-needed"],
+        "arrow-parens": "off",
         "no-param-reassign": [
             "error",
             {
@@ -56,16 +69,17 @@
                 "devDependencies": true
             }
         ],
-        "max-len": [
+        "max-len": "off", // Prettier에서 처리
+        "html/no-self-closing": "error",
+        "html/void-elements": [
+            "error",
+            "always"
+        ],
+        "prettier/prettier": [
             "error",
             {
-                "code": 120,
-                "ignoreComments": true,
-                "ignoreStrings": true,
-                "ignoreTemplateLiterals": true
+                "htmlWhitespaceSensitivity": "ignore"
             }
-        ],
-        "html/no-self-closing": "warn",
-        "html/void-elements": ["error", "always"]
+        ]
     }
 }
