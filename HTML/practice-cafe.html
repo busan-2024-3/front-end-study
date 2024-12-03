@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>온라인 카페</title>
+</head>
+
+<body>
+
+  <!-- 헤더 섹션 -->
+  <header>
+    <h1>온라인 카페</h1>
+    <p>우리 카페에 오신 것을 환영합니다! 커피와 다양한 음료를 즐기세요.</p>
+  </header>
+
+  <hr>
+  <main>
+    <!-- 메뉴 테이블 -->
+    <section>
+      <h2>카페 메뉴</h2>
+      <table border="1">
+        <caption>카페 음료 메뉴</caption>
+        <thead>
+          <tr>
+            <th>음료</th>
+            <th>가격</th>
+            <th>설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>아메리카노</td>
+            <td>3,500원</td>
+            <td>진한 커피 맛이 특징입니다.</td>
+          </tr>
+          <tr>
+            <td>카페라떼</td>
+            <td>4,000원</td>
+            <td>부드럽고 고소한 맛의 커피입니다.</td>
+          </tr>
+          <tr>
+            <td>카라멜 마끼아또</td>
+            <td>4,500원</td>
+            <td>달콤한 카라멜 맛이 추가된 음료입니다.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <!-- 인기 음료 리스트 -->
+    <section>
+      <h2>인기 음료 추천</h2>
+      <p>이 음료들을 놓치지 마세요!</p>
+      <ul>
+        <li>아이스 아메리카노</li>
+        <li>카페 모카</li>
+        <li>녹차 라떼</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- 이미지 섹션 -->
+    <section>
+      <h2>우리 카페의 분위기</h2>
+      <img src="./1. image/images/cafe.png" alt="카페 내부" width="600" height="400">
+      <p>편안한 분위기에서 커피를 즐기세요.</p>
+    </section>
+
+    <hr>
+
+    <!-- 고객 피드백 폼 -->
+    <section>
+      <h2>고객 피드백</h2>
+      <p>우리 카페에 대한 의견을 남겨주세요!</p>
+      <form action="/submit-feedback" method="post">
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="feedback">피드백:</label><br>
+        <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="피드백 보내기">
+      </form>
+      <hr>
+  </main>
+  <footer>
+    <p>&copy; 2024 내 블로그. 모든 권리 보유.</p>
+  </footer>
+  </section>
+
+</body>
+
+</html>
