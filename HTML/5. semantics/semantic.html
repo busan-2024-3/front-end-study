@@ -1,93 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>시맨틱 태그 예제</title>
-	<style>
-		html {
-			scroll-behavior: smooth;
-		}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>시맨틱 태그 예제</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-		table,
-		td,
-		th {
-			border: 1px solid black;
-			border-collapse: collapse;
-		}
+    table,
+    td,
+    th {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
 
-		th {
-			background-color: beige;
-			height: 15px;
-		}
+    th {
+      background-color: beige;
+      height: 15px;
+    }
 
-		td {
-			height: 15px;
-		}
-	</style>
+    td {
+      height: 15px;
+    }
+  </style>
 </head>
 
 <body>
-	<!-- header+main+footer -->
-	<header>
-		<h1>내 블로그</h1>
-		<!-- nav>ul>(li>a)*3 -->
-		<nav>
-			<ul>
-				<li><a href="#home">홈</a></li>
-				<li><a href="#about">소개</a></li>
-				<li><a href="#contact">연락처</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<!-- section>h2+article>h3+p -->
-		<section>
-			<h2>최신 게시글</h2>
-			<article>
-				<h3>첫 번째 글</h3>
-				<p>이 글은 시맨틱 태그를 활용한 예제입니다.</p>
-			</article>
-		</section>
+  <!-- header+main+footer -->
+  <header>
+    <h1>내 블로그</h1>
+    <!-- nav>ul>(li>a)*3 -->
+    <nav>
+      <ul>
+        <li><a href="#home">홈</a></li>
+        <li><a href="#about">소개</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- section>h2+article>h3+p -->
+    <section>
+      <h2>최신 게시글</h2>
+      <article>
+        <h3>첫 번째 글</h3>
+        <p>이 글은 시맨틱 태그를 활용한 예제입니다.</p>
+      </article>
+    </section>
 
-		<!-- aside>h3+ul>(li>a)*2 -->
-		<aside>
-			<h3>관련 링크</h3>
-			<ul>
-				<li><a href="#">추천 글 1</a></li>
-				<li><a href="#">추천 글 2</a></li>
-			</ul>
-		</aside>
-		<hr>
-		<section id="contact">
-			<h2>연락처 목록</h2>
-			<table>
-				<tr>
-					<th colspan="2">이름</th>
-					<th>나이</th>
-					<th>전화번호</th>
-				</tr>
-				<tr>
-					<td rowspan="2">홍</td>
-					<td rowspan="2">길동</td>
-					<td rowspan="2">30</td>
-					<td>010-1111-1111</td>
-				</tr>
-				<tr>
-					<td>010-2222-2222</td>
-				</tr>
-			</table>
-		</section>
+    <!-- aside>h3+ul>(li>a)*2 -->
+    <aside>
+      <h3>관련 링크</h3>
+      <ul>
+        <li><a href="#">추천 글 1</a></li>
+        <li><a href="#">추천 글 2</a></li>
+      </ul>
+    </aside>
+    <hr />
+    <section id="contact">
+      <h2>연락처 목록</h2>
+      <table>
+        <tr>
+          <th colspan="2">이름</th>
+          <th>나이</th>
+          <th>전화번호</th>
+        </tr>
+        <tr>
+          <td rowspan="2">홍</td>
+          <td rowspan="2">길동</td>
+          <td rowspan="2">30</td>
+          <td>010-1111-1111</td>
+        </tr>
+        <tr>
+          <td>010-2222-2222</td>
+        </tr>
+      </table>
+    </section>
 
-		<input type="button" value="홈으로" onclick="location.href='../home.html'" />
-
-	</main>
-	<footer>
-		<!-- 특수문자 입력에 대하여...
+    <input type="button" value="홈으로" onclick="location.href='../home.html'" />
+  </main>
+  <footer>
+    <!-- 특수문자 입력에 대하여...
 		 &_____; 특수문자를 입력 가능 -->
-		<p>&copy; 2024 내 블로그. 모든 권리 보유.</p>
-	</footer>
+    <p>&copy; 2024 내 블로그. 모든 권리 보유.</p>
+  </footer>
 </body>
 
 </html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>02. CSS선택자</title>
+  <style>
+    /* 선택자 */
+    /* 태그 선택자 - 특정 태그를 사용한 요소에 스타일 적용 */
+    p {
+      text-align: center;
+      color: red;
+    }
+
+    /* 자손, 하위 요소 선택자 */
+    p b {
+      color: blue;
+    }
+
+    /* 아이디 선택자 - 특정 아이디를 가진 요소에 스타일 적용 */
+    #id-selector {
+      text-align: left;
+    }
+
+    /* 클래스 선택자 - 특정 클래스를 가진 요소에 스타일 적용 */
+    .class-selector {
+      text-align: right;
+    }
+
+    /* 그룹 선택자 - 둘 이상 같은 요소에 같은 스타일 적용 */
+    p,
+    h1 {
+      color: red;
+    }
+
+    /* 전체 선택자 - 모든 요소에 스타일 적용 */
+    * {
+      font-size: 25px;
+      /* 글자 간의 행 간격 */
+      line-height: 35px;
+    }
+
+    /* 속성 선택자 */
+    input[type='text'] {
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+
+<body>
+  <p>동해물과 백두산이 <b>마르고 닳도록</b>
+    <span><b>하느님이 </b>보우하사</span>
+    우리나라 만세
+  </p>
+
+  <p id="id-selector">재미있는 HTML</p>
+  <p class="class-selector">재미있는 CSS</p>
+  <span class="class-selector">재미있는 프론트 엔드^^</span>
+
+  <h1>프로그래밍 공부</h1>
+
+  Input 태그1 : <input type="text" size="20" /><br />
+  Input 태그2 : <input type="text" size="20" /><br />
+</body>
+
+</html>

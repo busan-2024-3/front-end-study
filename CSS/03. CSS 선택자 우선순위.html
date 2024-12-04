@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS 적용 우선순위</title>
+  <style>
+    /*
+				* CSS 적용 우선순위
+				1. !important
+					- 우선순위를 무시하고 해당 스타일을 강제 적용
+				2. 인라인
+				3. 아이디 선택자 (#)
+				4. 클래스 선택자 (.)
+				5. 태그 선택자
+		*/
+
+    /* 명시도 : 0001 */
+    body {
+      color: blueviolet !important;
+    }
+
+    h1 {
+      /* color: red !important; */
+      color: red;
+    }
+
+    /* 명시도 : 0010 */
+    .text {
+      color: blue;
+    }
+
+    /* 명시도 : 0100 */
+    #text {
+      color: green;
+    }
+
+    /* 명시도: 0111 */
+    h1#my-id.my-class {
+      color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CSS 적용 우선순위 - 태그</h1>
+  <h1 class="text">CSS 적용 우선순위 - 클래스</h1>
+  <h1 id="text" class="text">CSS 적용 우선순위 - 아이디</h1>
+  <h1 id="text" class="text" style="color: yellow">CSS 적용 우선순위 - 인라인</h1>
+  <h1 id="my-id" class="my-class">아이디와 클래스를 둘 다 가진 요소</h1>
+  <h1>CSS 적용 우선순위 - !important</h1>
+</body>
+
+</html>

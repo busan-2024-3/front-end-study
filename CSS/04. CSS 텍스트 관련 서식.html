@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>텍스트 관련 서식</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap" rel="stylesheet" />
+  <style>
+    /*
+				* 텍스트 관련 서식 종류
+				font-size : 텍스트의 크기
+				font-weight : 글자의 두께 100~900, bold(700)
+					, bolder, lighter, normal(400)..
+				font-family : 글꼴 지정
+				font-style : 문자 스타일 (normal, italic)
+				color : 글꼴의 색상을 지정
+				text-decoration : 텍스트의 줄 표시 / 제거
+				text-transform : 대소문자 변환
+				text-shadow : 텍스트 그림자 효과
+			*/
+    a {
+      color: black;
+      text-decoration: line-through;
+    }
+
+    h1 {
+      font-size: 50px;
+      font-weight: bolder;
+    }
+
+    p.copy {
+      text-transform: capitalize;
+      text-align: center;
+      text-shadow: 1px 1px 5px blue;
+    }
+
+    .amugona {
+      font-family: 'Yuji Mai', serif;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CSS 텍스트 서식 관련 속성</h1>
+  <a href="www.naver.com">네이버 바로가기</a>
+  <p>텍스트 아무거나 써 보세요^^</p>
+  <p class="copy">copyright all Reserved by heeyeon 2024</p>
+
+  <p class="amugona">wwwwwwwwwwwww</p>
+  <p class="amugona">한글로 아무거나</p>
+</body>
+
+</html>
