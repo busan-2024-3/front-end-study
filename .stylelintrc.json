@@ -1,0 +1,24 @@
+{
+	"extends": "stylelint-config-standard",
+	"plugins": [
+		"stylelint-order"
+	],
+	"rules": {
+		"color-no-invalid-hex": true,
+		"declaration-colon-newline-after": "always-multi-line",
+		"declaration-block-no-redundant-longhand-properties": true,
+		"property-no-unknown": true,
+		"selector-max-id": 0,
+		"block-no-empty": true,
+		"max-empty-lines": 1,
+		"media-feature-name-no-unknown": true,
+		"no-duplicate-selectors": true,
+		"no-unknown-animations": true,
+		"font-family-no-duplicate-names": true,
+		"string-quotes": "single",
+		"order/properties-alphabetical-order": true,
+		"indentation": 2,
+		"linebreaks": "unix",
+		"no-unsupported-browser-features": true
+	}
+}

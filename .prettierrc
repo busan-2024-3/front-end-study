@@ -6,8 +6,9 @@
   "semi": true,
   "bracketSameLine": true,
   "printWidth": 60,
-  "htmlWhitespaceSensitivity": "ignore",
+  "htmlWhitespaceSensitivity": "strict",
   "useTabs": false,
+  "htmlSelfClosing": true,
   "endOfLine": "lf",
   "parser": "html",
   "overrides": [

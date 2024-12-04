@@ -10,8 +10,8 @@
         "browser": true
     },
     "plugins": [
-        "prettier",
         "html",
+        "prettier",
         "import"
     ],
     "extends": [
@@ -23,8 +23,7 @@
     "overrides": [
         {
             "files": [
-                "*.html",
-                "*.js"
+                "*.html"
             ],
             "plugins": [
                 "html"
@@ -70,7 +69,6 @@
             }
         ],
         "max-len": "off",
-        "html/no-self-closing": "error",
         "html/void-elements": [
             "error",
             "always"

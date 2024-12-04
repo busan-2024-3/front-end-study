@@ -2,9 +2,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.validate": [
     "javascript",
-    "css",
-    "html",
-    "markdown"
+    "html"
   ],
   "eslint.enable": true,
   "editor.formatOnSave": true,
@@ -13,7 +11,8 @@
   "files.autoSave": "afterDelay", // Auto Save 설정 확인
   "files.autoSaveDelay": 1000, // 저장 전 대기 시간 (ms 단위, 기본값 1000ms)
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
+    "source.fixAll.eslint": "always",
+    "source.fixAll.stylelint": "always"
   },
   "emmet.showAbbreviationSuggestions": true,
   "emmet.syntaxProfiles": {
