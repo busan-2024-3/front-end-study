@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>목록 관련 서식</title>
+	<!-- <link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=favorite" />
+	<style>
+		.material-symbols-outlined {
+			font-variation-settings:
+				'FILL' 1,
+				'wght' 400,
+				'GRAD' 0,
+				'opsz' 20
+		}
+	</style> -->
+	<style>
+		/* 목록 스타일 속성 :
+				기호, 기호의 위치, 사용자 지정 이미지로 기호 넣기
+				- font.google.com 에서 아이콘 다운받아 넣어보기 (svg파일 권장)
+					svg는 벡터형식의 파일, 선명함, 코드로 편집이 가능
+					png는 고정된 해상도와 크기, 투명한 배경,
+						크기 조정시에는 품질 손상의 가능성이 있음
+		*/
+		ul {
+			list-style-type: none;
+			/* list-style-image: url("../HTML/1. image/images/blank_heart.svg"); */
+			/* list-style-image: radial-gradient(red, blue); */
+			list-style-position: inside;
+		}
+
+		ol {
+			list-style-type: upper-roman;
+			list-style-position: inside;
+		}
+
+		/*
+			::before
+			::after
+			* 가상 요소 (pseudo-element)
+				- 가상 요소는 실제 DOM(Document Object Model)구조에 영향을 주지 않고,
+					스타일링과 레이아웃을 조작
+				- 텍스트, 이미지, 속성을 삽입할 수 있음
+
+		*/
+		.menu li::before {
+			content: '🐢 ';
+		}
+
+		/* .menu li::after {
+			content: '리스트 각 요소에 일괄적으로 붙일 내용';
+			color: green;
+			font-weight: 100;
+		} */
+
+
+		a::after {
+			content: ' (' attr(href) ')';
+		}
+
+		.dead-link {
+			text-decoration: line-through;
+		}
+
+		.dead-link::after {
+			display: inline-block;
+			content: '❌';
+			width: 12px;
+			height: 12px;
+		}
+
+		.recommend::after {
+			content: ' 추천메뉴 📌';
+		}
+	</style>
+</head>
+
+<body>
+	<!-- h2+ul>li*3 -->
+	<h2>목록 스타일 예제</h2>
+	<ul>
+		<li>첫 번째 아이템</li>
+		<li>두 번째 아이템</li>
+		<li>세 번째 아이템</li>
+	</ul>
+	<ol>
+		<li>첫 번째 단계</li>
+		<li>두 번째 단계</li>
+		<li>세 번째 단계</li>
+	</ol>
+
+	<ul class="menu">
+		<li>menu-1</li>
+		<li class="recommend">menu-2</li>
+		<li>menu-3</li>
+		<li>menu-4</li>
+		<li class="recommend">menu-5</li>
+	</ul>
+
+	<p>
+		단락 내용 혹은 어떤 기사 내용 어쩌고 저쩌고 뭐라고 뭐라고.
+		<a href="https://www.naver.com">네이버로 가서 뭔가 검색하고 싶음.</a>
+	</p>
+
+	<p>
+		두번째 단락내용 어저고저쩌고 뭐라고 뭐라고
+		<a href="" class="dead-link">기사 내용을 더 보시려면 클릭하세요. 는 사실 기사 삭제됨.</a>
+	</p>
+
+</body>
+
+</html>

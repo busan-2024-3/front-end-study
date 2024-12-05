@@ -1,0 +1,27 @@
+p {
+  color: blue;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+#unique-item {
+  font-size: 20px;
+}
+
+h2+p {
+  color: red;
+}
+
+.description~section {
+  background-color: #f0f0f0;
+}
+
+ul>li {
+  font-weight: bold;
+}
+
+[title] {
+  color: green;
+}
