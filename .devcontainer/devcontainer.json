@@ -21,7 +21,8 @@
                 "ionutvmi.path-autocomplete",
                 "mechatroner.rainbow-csv",
                 "shardulm94.trailing-spaces",
-                "ms-azuretools.vscode-docker"
+                "ms-azuretools.vscode-docker",
+                "rvest.vs-code-prettier-eslint"
             ]
         }
     }

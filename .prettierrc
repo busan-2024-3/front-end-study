@@ -10,7 +10,15 @@
   "useTabs": false,
   "htmlSelfClosing": true,
   "endOfLine": "lf",
-  "parser": "html",
+  "singleAttributePerLine": true,
+  "rules": {
+    "prettier/prettier": [
+      true,
+      {
+        "tabWidth": 4
+      }
+    ]
+  },
   "overrides": [
     {
       "files": "*.json",
@@ -24,5 +32,15 @@
         "tabWidth": 2
       }
     }
-  ]
+  ],
+  "stylelint": {
+    "extends": [
+      "stylelint-config-idiomatic-order",
+      "./node_modules/prettier-stylelint/config.js"
+    ],
+    "rules": {
+      "indentation": 4,
+      "string-quotes": "single"
+    }
+  }
 }

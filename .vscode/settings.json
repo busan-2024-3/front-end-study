@@ -4,13 +4,11 @@
     "javascript",
     "html"
   ],
-  "eslint.enable": true,
   "editor.formatOnSave": true,
   "prettier.requireConfig": true,
-  "prettier.enableDebugLogs": true,
-  "files.autoSave": "afterDelay", // Auto Save 설정 확인
-  "files.autoSaveDelay": 1000, // 저장 전 대기 시간 (ms 단위, 기본값 1000ms)
+  "files.autoSave": "afterDelay",
   "editor.codeActionsOnSave": {
+    "source.fixAll.prettier": "always",
     "source.fixAll.eslint": "always",
     "source.fixAll.stylelint": "always"
   },
@@ -21,19 +19,16 @@
       "profile": "html5"
     }
   },
-  "editor.tabSize": 2, // 기본 들여쓰기 크기 (스페이스 개수)
-  "editor.insertSpaces": false, // true: 스페이스 사용, false: 탭 사용
+  "editor.tabSize": 2,
+  "editor.insertSpaces": false,
   "[html]": {
-    "editor.tabSize": 2 // HTML 파일은 2칸 들여쓰기
+    "editor.tabSize": 2
   },
   "[json]": {
-    "editor.tabSize": 4 // JSON 파일은 4칸 들여쓰기
+    "editor.tabSize": 4
   },
   "cSpell.words": [
     "busan",
     "htmlhint"
-  ],
-  "prettier.configPath": "./.prettierrc",
-  "prettier.prettierPath": "./node_modules/prettier",
-  "prettier.htmlWhitespaceSensitivity": "ignore" // 공백 민감도 설정
+  ]
 }
