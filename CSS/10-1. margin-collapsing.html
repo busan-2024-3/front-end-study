@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>마진 중첩 예제</title>
+	<style>
+		.box1 {
+			margin-bottom: 50px;
+			background-color: lightblue;
+			height: 100px;
+		}
+
+		.box2 {
+			margin-top: 30px;
+			margin-bottom: 10px;
+			background-color: lightgreen;
+			height: 100px;
+		}
+
+		.box3 {
+			margin-top: 20px;
+			background-color: lightcoral;
+			height: 100px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box1">박스1</div>
+	<div class="solution" style="overflow: hidden;"></div>
+	<div class="box2">박스2</div>
+	<div class="solution" style="overflow: auto;"></div>
+	<div class="box3">박스3</div>
+</body>
+
+</html>

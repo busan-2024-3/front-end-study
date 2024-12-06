@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>float clear</title>
+	<style>
+		.container {
+			border: 5px solid red;
+			width: 600px;
+		}
+
+		.top {
+			background-color: purple;
+			height: 50px;
+		}
+
+		.left {
+			background-color: skyblue;
+			width: 400px;
+			height: 100px;
+			float: left;
+
+		}
+
+		.right {
+			background-color: orange;
+			width: 200px;
+			height: 100px;
+			float: right;
+		}
+
+		.clear {
+			background-color: green;
+			height: 50px;
+			clear: both;
+		}
+
+		.clearfix::after {
+			content: "";
+			display: flow-root;
+			/*
+				display: table|flex|flow-root|block 등
+				다양한 값을 넣을 수 있으며
+			*/
+			clear: both;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- .container>.top+.left+.right+.clear -->
+	<div class="container clearfix">
+		<div class="top">float:none </div>
+		<div class="left">float:left 왼쪽으로 부유된 요소</div>
+		<div class="right">float:right 오른쪽으로 부유된 요소 </div>
+		<!-- <div class="clear">float:clear 이 요소는 두 부유된 요소 아래로 내려갑니다.</div> -->
+	</div>
+</body>
+
+</html>

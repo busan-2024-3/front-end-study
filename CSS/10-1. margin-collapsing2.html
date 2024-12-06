@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>부모 자식 마진 중첩 해결</title>
+	<style>
+		.parent {
+			/* 해결방법 세 가지
+				(두 마진 사이에 어떠한 표시내용이 추가되면 된다)
+			*/
+			/* border: 1px solid tomato; */
+			/* padding: 1px; */
+			/* overflow: hidden; */
+			margin-top: 100px;
+		}
+
+		.child {
+			margin-top: 50px;
+			background-color: powderblue;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- .parent>.child -->
+	<div class="parent">
+		<div class="child">Hello World</div>
+	</div>
+</body>
+
+</html>
