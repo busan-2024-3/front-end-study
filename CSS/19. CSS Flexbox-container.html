@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flexbox-Container</title>
+	<style>
+		/* display : flex | inline-flex */
+		/*
+			* flex 컨테이너 지정하기
+			부모요소를 flex컨테이너로 정의한다.
+			해당 컨테이너의 자식 요소들이 flex 아이템으로 동작한다.
+		*/
+
+		/*
+			flex-direction : row | column | row-reverse | column-reverse
+			* 속성 값에 따라 아이템을 가로(row)로, 세로(column)로 배치한다.
+		*/
+		/*
+			flex-wrap : wrap | nowrap 브라우저 크기에 따른 아이템의 배치와 사이즈
+				- wrap : 배치 변경, 크기 유지
+				- nowrap : 배치 유지, 크기 변경
+		*/
+		.container {
+			display: flex;
+			border: 1px solid black;
+			height: 100px;
+			flex-direction: row;
+			flex-wrap: wrap;
+			/* flex-flow : flex-direction의 속성값 flex-wrap의 속성값 */
+			/* flex-flow: row wrap; */
+			/*
+				justify-content : flex-start(defalut) | center | flex-end
+			*/
+			justify-content: center;
+			/*
+				align-items : flex-start | center | flex-end | stretch(defalut)
+			*/
+			/* align-items: center; */
+			/*
+				align-content : 여러줄의 아이템의 정렬을 설정.
+			*/
+			align-content: center;
+		}
+
+		/*
+			flex아이템에 적용 가능한 속성
+				- order				: 아이템의 정렬 순서 설정 (숫자로 부여)
+				- flex-grow		: 남는 공간을 나누는 비율 (숫자로 부여)
+				- flex-shrink	: 컨테이너 공간이 부족할 때 아이템이 줄어드는 정도
+				- flex-basis	: 아이템의 기본크기 설정
+				- flex				: flex-grow flex-shrink flex-basis
+				- align-self	: 형제 요소와의 배치를 정렬
+
+		 */
+		.item {
+			width: 50px;
+			/* height: 50px; */
+			background-color: rgb(88, 144, 88);
+			color: white;
+			font-size: 18px;
+			border: 2px solid lightgreen;
+			border-radius: 5px;
+			text-align: center;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+
+<body>
+	<section class="container">
+		<div class="item">1</div>
+		<div class="item">2</div>
+		<div class="item">3</div>
+		<div class="item">4</div>
+	</section>
+</body>
+
+</html>

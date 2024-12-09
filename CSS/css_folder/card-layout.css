@@ -1,0 +1,53 @@
+/* 전역 스타일 */
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* 카드 컨테이너 */
+.card-container {
+  /* float 사용 시 컨테이너 높이 문제 해결 */
+  float: left;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* 개별 카드 */
+.card {
+  /* 카드 간 간격 */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+  float: left;
+
+  /* 카드 너비 */
+  margin: 1%;
+  padding: 15px;
+
+  /* 왼쪽 정렬 */
+  width: 30%;
+}
+
+/* 푸터 */
+footer {
+  background-color: #333;
+
+  /* 고정 위치 */
+  bottom: 0;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}

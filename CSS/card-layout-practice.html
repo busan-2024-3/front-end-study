@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css_folder/card-layout.css">
+  <title>카드 레이아웃</title>
+  <style>
+    /* 전역 스타일 */
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 헤더 스타일 */
+    header {
+      background-color: #4caf50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* 카드 컨테이너 */
+    .card-container {
+      /* float 사용 시 컨테이너 높이 문제 해결 */
+      float: left;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    /* 개별 카드 */
+    .card {
+      /* 카드 간 간격 */
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+      float: left;
+      /* box-sizing: border-box; */
+
+      /* 카드 너비 */
+      margin: 1%;
+      padding: 15px;
+
+      /* 왼쪽 정렬 */
+      width: 30%;
+    }
+
+    /* 푸터 */
+    footer {
+      background-color: #333;
+
+      /* 고정 위치 */
+      bottom: 0;
+      color: white;
+      padding: 10px;
+      position: fixed;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>CSS 배치 실습</h1>
+  </header>
+  <div class="card-container">
+    <div class="card">
+      <h2>카드 제목 1</h2>
+      <p>카드 내용 1입니다. 여기에 설명이 들어갑니다.</p>
+    </div>
+    <div class="card">
+      <h2>카드 제목 2</h2>
+      <p>카드 내용 2입니다. 여기에 설명이 들어갑니다.</p>
+    </div>
+    <div class="card">
+      <h2>카드 제목 3</h2>
+      <p>카드 내용 3입니다. 여기에 설명이 들어갑니다.</p>
+    </div>
+  </div>
+  <footer>
+    <p>고정된 위치에 있는 푸터</p>
+  </footer>
+</body>
+
+</html>
