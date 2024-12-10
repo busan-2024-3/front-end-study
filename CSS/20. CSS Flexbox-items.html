@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flexbox-items</title>
+	<style>
+		h1 {
+			text-transform: capitalize;
+		}
+
+		/*
+			flex아이템에 적용 가능한 속성
+				- order				: 아이템의 정렬 순서 설정 (숫자로 부여)
+				- flex-grow		: 남는 공간을 나누는 비율 (숫자로 부여)
+				- flex-shrink	: 컨테이너 공간이 부족할 때 아이템이 줄어드는 정도
+				- flex-basis	: 아이템의 기본크기 설정
+				- flex				: flex-grow flex-shrink flex-basis
+				- align-self	: 형제 요소와의 배치를 정렬
+		 */
+		.flex-container {
+			display: flex;
+			background-color: lightgray;
+		}
+
+		.flex-container>div {
+			background-color: lightcoral;
+			color: white;
+			width: 100px;
+			margin: 10px;
+			text-align: center;
+			font-size: 30px;
+		}
+
+		/* flex-grow 속성값의 적용 (계산)
+		
+		(flex-grow값 / 모든 flex-grow 값의 합) * 사용 가능한 공간
+		
+		*/
+		/* .fixed-width {
+			width: 600px;
+		}
+
+		.fixed-width>.item-no-margin-border {
+			margin: 0px;
+			border: 1px solid red;
+			box-sizing: border-box;
+		} */
+	</style>
+</head>
+
+<body>
+	<h1>flexbox items attribute</h1>
+
+	<h3>order 속성</h3>
+	<!-- 숫자 값을 부여하여 형제 아이템 간 화면 표시 순서를 설정 -->
+	<div class="flex-container">
+		<div style="order:3">1</div>
+		<div style="order:1">2</div>
+		<div style="order:2">3</div>
+		<div style="order:4">4</div>
+	</div>
+	<hr>
+	<h3>flex-grow 속성</h3>
+	<div class="flex-container fixed-width">
+		<div class="item-no-margin-border" style="flex-grow:1">1</div>
+		<div class="item-no-margin-border" style="flex-grow:2">2</div>
+		<div class="item-no-margin-border" style="flex-grow:3">3</div>
+		<!-- <div class="item-no-margin-border" style="flex-grow:2">4</div> -->
+	</div>
+	<hr>
+	<h3>flex-shrink 속성</h3>
+	<!--
+		defalut 1
+		0으로 설정하면 줄어들지 않음
+		1보다 큰 수를 설정하면 1로 설정한 아이템보다 극명하게 줄어든다.
+	-->
+	<div class="flex-container">
+		<div class="">1</div>
+		<div class="">2</div>
+		<div class="" style="flex-shrink: 0;">3</div>
+		<div class="">4</div>
+		<div class="">5</div>
+		<div class="">6</div>
+		<div class="">7</div>
+	</div>
+	<hr>
+	<h3>flex-basis 속성</h3>
+	<!--
+		width와 flex-basis모두 요소의 너비를 설정하는 속성이지만
+		flex-basis는 플렉스 컨테이너 안에서만 작동하며,
+		요소의 크기가 변동되기 전의 기준값 역할을 한다.
+
+		플렉스 레이아웃 내에서는 flex-basis가 width보다 우선순위가 높다.
+	-->
+	<div class="flex-container">
+		<div class="">1</div>
+		<div class="">2</div>
+		<div class="" style="width: 300px; flex-basis: 200px;">3</div>
+		<div class="">4</div>
+	</div>
+	<hr>
+	<!--
+		align-self: auto|stretch|center|flex-start|flex-end
+		auto가 defalult
+		요소는 부모 컨테이너의 align-items 속성을 상속
+		(재정의 해 줬을때 배치가 바뀐다고 이해).
+	-->
+	<h3>align-self 속성</h3>
+	<div class="flex-container" style="height: 200px; align-items:flex-end">
+		<div>1</div>
+		<div>2</div>
+		<div style="align-self: flex-start;">3</div>
+		<div>4</div>
+	</div>
+</body>
+
+</html>

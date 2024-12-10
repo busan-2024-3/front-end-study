@@ -69,23 +69,16 @@
             }
         ],
         "max-len": "off",
-        "html/void-elements": [
-            "error",
-            "always"
-        ],
         "prettier/prettier": [
             "error",
             {
+                "endOfLine": "auto",
                 "htmlWhitespaceSensitivity": "ignore"
             }
         ],
         "semi": [
             "error",
             "always"
-        ],
-        "quotes": [
-            "error",
-            "double"
         ]
     }
 }
