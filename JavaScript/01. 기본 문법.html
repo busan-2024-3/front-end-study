@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		// 변수
+		/*
+				var, let, const(상수) :
+					데이터 타입에 상관없이 데이터를 저장할 때
+					변수 앞에 명시
+					- var 사용 지양
+					- let 값의 재할당 가능
+					- const 재할당 불가
+		*/
+		// var a;
+		// let b;
+		// b = 10;
+		const c = 3.14;
+		const d = true;
+
+		// console.log(b);
+		console.log(c);
+		console.log(d);
+
+		console.log('---------------');
+
+		/*
+			* 데이터 타입
+				1. Number
+				2. String
+				3. Undefined
+				4. Null
+				5. Boolean
+				6. Object
+		*/
+
+		let point = 990;
+		console.log(point);
+		// 해당 값의 데이터타입을 알려줌
+		console.log(typeof point);
+		point = -123;
+		console.log(typeof point);
+		console.log('---------------');
+
+		// NaN : Not a Number
+		point = 1 * 'A';
+		console.log(point);
+		console.log(typeof point);
+		// NaN도 number타입으로 간주
+		console.log('---------------');
+
+		// let str = "문자열1"; 큰따옴표도 쓸 수 있음
+		const str = '문자열1';
+		const str2 = '문자열22' + str;
+		const str3 = `문자열333 ${str2}`;
+		console.log(str);
+		console.log(str2);
+		console.log(str3);
+		console.log(typeof str);
+		console.log(typeof str2);
+		console.log(typeof str3);
+		console.log('---------------');
+
+		let e;
+		console.log(e);
+		// 값이 초기화되지 않은 변수를 출력할 경우 undefined
+		console.log('---------------');
+
+		let f = null;
+		console.log(f);
+		// null : '값이 없는 상태' or '참조할 값이 없는 상태'
+		// 				변수나 객체 속성이 빈 값임을 명시적으로 나타낼 때 사용.
+		console.log('---------------');
+
+		// undefined vs null
+		// ==		연산자 : 두 값이 같은지를 비교
+		// ===	연산자 : 두 값과 데이터 타입이 모두 같은지를 비교
+		console.log(undefined == null);
+		console.log(undefined === null);
+		console.log(typeof undefined);
+		console.log(typeof null);
+		console.log('---------------');
+
+		// Boolean
+
+		//  Object : { key : value } 형태
+		let book = {
+			title: '책',
+			author: '다자이 오사무',
+			maxPage: 984,
+		};
+		console.log(book);
+		console.log(typeof book);
+		console.log(book.title);
+		console.log(typeof book.title);
+		console.log(typeof book.maxPage);
+		console.log(typeof book.maxPage);
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

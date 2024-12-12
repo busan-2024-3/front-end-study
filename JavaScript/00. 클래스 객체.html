@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>클래스 객체 구현</title>
+	<script>
+		// ES6 이후 클래스 문법도 지원
+		class Animal {
+			constructor(name) {
+				this.name = name;
+			}
+
+			speak() {
+				console.log(`${this.name} makes a noise.`);
+			}
+		}
+
+		class Dog extends Animal {
+			// constructor(name) {
+			// 	super(name);
+			// }
+
+			speak() {
+				console.log(`${this.name} barks.`);
+			}
+		}
+
+		const dog = new Dog('Rex');
+		dog.speak(); // Rex barks.
+	</script>
+</head>
+
+<body>
+	클래스 객체 구현
+</body>
+
+</html>

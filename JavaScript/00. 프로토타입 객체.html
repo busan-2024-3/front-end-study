@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>프로토타입 객체 구현</title>
+	<script>
+		function Animal(name) {
+			this.name = name;
+		}
+
+		Animal.prototype.speak = function () {
+			console.log(this.name + '는(가) 소리를 낸다.');
+		};
+
+		function Dog(name) {
+			Animal.call(this, name);
+		}
+
+		Dog.prototype = Object.create(Animal.prototype);
+		Dog.prototype.constructor = Dog;
+
+		Dog.prototype.speak = function () {
+			console.log(this.name + '가 짖는다.');
+		};
+
+		const dog = new Dog('댕댕이');
+		dog.speak();
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

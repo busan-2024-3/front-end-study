@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		// 제어문
+
+		// 조건문
+		// if
+		const num = 10;
+		if (num < 20) {
+			console.log('20보다 작다');
+		}
+
+		// false를 반환하는 것 : 0, null, '', undefined
+		if (!undefined) {
+			console.log('출력하기');
+		}
+
+		if (!null) {
+			console.log('출력하기');
+		} else {
+			console.log('출력하지 않음');
+		}
+
+		// switch
+		const site = prompt(
+			'네이버, 다음, 구글 중 즐겨 사용하는 사이트?',
+		);
+		switch (site) {
+			case '네이버':
+				document.write(
+					`<h1><a href="https://www.naver.com">${site}</a></h1>`,
+				);
+				break;
+			case '다음':
+				document.write(
+					`<h1><a href="https://www.daum.net">${site}</a></h1>`,
+				);
+				break;
+			case '구글':
+				document.write(
+					`<h1><a href="https://www.google.com">${site}</a></h1>`,
+				);
+				break;
+			default:
+				alert('보기 중에 없는 사이트 입니다.');
+				break;
+		}
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
