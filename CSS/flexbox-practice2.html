@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Flexbox Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #eeeded;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            flex: 0 0 250px;
+            padding: 20px;
+
+        }
+
+        .content {
+            padding: 20px;
+
+        }
+
+        /* .fixed {
+            position: fixed;
+            bottom: 0;
+            text-align: center;
+            background-color: lightblue;
+            width: 100%;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <!-- 헤더 -->
+    <header>
+        <div class="logo">My Website</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <div class="main-container">
+        <!-- 사이드바 -->
+        <div class="sidebar">
+            <h3>Sidebar</h3>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </div>
+
+        <!-- 콘텐츠 영역 -->
+        <div class="content">
+            <h1>Main Content</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+                ante dapibus diam.</p>
+            <p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+                consequat vitae, eleifend ac, enim. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+                porttitor, facilisis luctus, metus.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="fixed">
+        <p>&copy; 2024 My Website. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

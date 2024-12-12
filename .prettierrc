@@ -7,7 +7,7 @@
   "bracketSameLine": true,
   "printWidth": 60,
   "htmlWhitespaceSensitivity": "strict",
-  "useTabs": false,
+  "useTabs": true,
   "htmlSelfClosing": true,
   "endOfLine": "lf",
   "singleAttributePerLine": true,
@@ -15,7 +15,7 @@
     "prettier/prettier": [
       true,
       {
-        "tabWidth": 4
+        "tabWidth": 2
       }
     ]
   },
@@ -28,6 +28,11 @@
     },
     {
       "files": "*.html",
+      "options": {
+        "tabWidth": 2
+      }
+    },    {
+      "files": "*.js",
       "options": {
         "tabWidth": 2
       }
