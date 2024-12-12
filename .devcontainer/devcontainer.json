@@ -22,7 +22,8 @@
                 "mechatroner.rainbow-csv",
                 "shardulm94.trailing-spaces",
                 "ms-azuretools.vscode-docker",
-                "rvest.vs-code-prettier-eslint"
+                "rvest.vs-code-prettier-eslint",
+                "formulahendry.code-runner"
             ]
         }
     }
