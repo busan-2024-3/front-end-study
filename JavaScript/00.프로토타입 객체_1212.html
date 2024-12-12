@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>프로토탕입 객체 구현</title>
+		<script>
+			function Animal(name) {
+				this.name = name;
+			}
+			//  console.log(); : 콘솔 창에서(개발자 도구 콘솔창)에서 결과 확인 -> 아직 html과 js 파일만 있을 때 출력되는걸 확인할 때 사용
+			Animal.prototype.speak = function () {
+				console.log(this.name + '는소리를 낸다.');
+			};
+			function dog(name) {
+				Animal.call(this, name);
+			}
+			dog.prototype = Object.create(Animal.prototype); // 오버라이딩딩
+			dog.prototype.constructor = dog;
+			dog.prototype.speak = function () {
+				console.log(this.name + '가 짓는다다');
+			};
+			const DogDog = new Dog('댕댕이');
+			DogDog.speak();
+		</script>
+	</head>
+	<body></body>
+</html>
+<!-- console.log(); : 콘솔 창에서(개발자 도구 콘솔창)에서 결과 확인 -> 아직 html과 js 파일만 있을 때 출력되는걸 확인할 때 사용
+ -->

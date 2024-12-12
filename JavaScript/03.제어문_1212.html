@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// #제어문 : 조건문, 반복문
+			// ##조건문 : if , switch
+			// ### if
+			let num = 10;
+			if (num < 20) {
+				console.log('20보다 작다');
+			}
+			// false를 반환하는 것(else 없으면 콘솔 창에 출력안됨) : 0, null, '',undefined
+			if (!undefined) {
+				console.log('출력하기기');
+			}
+			// else
+			if (null) {
+				console.log('출력하기기');
+			} else {
+				console.log('출력하지 않음음');
+			}
+
+			// ### switch
+			let site = prompt(
+				'네이버, 다음,구글 중 즐겨 사용하는 사이트?',
+			);
+			// prompt(== p.input) : 입력창
+			/*switch(key){
+				case 'value':
+				break;
+
+				default:
+				break;
+			}*/
+			switch (site) {
+				case '네이버':
+					document.write(
+						`<h1><a href = 'https://www.naver.com/'>${site}</h1>`,
+					);
+					break;
+				case '다음':
+					document.write(`<h1>${site}</h1>`);
+					break;
+				case '구글':
+					document.write(`<h1>${site}</h1>`);
+					break;
+
+				default:
+					alert('보기 중에 없는 사이트 입니다다');
+					break;
+			}
+
+			// ## 반복문
+		</script>
+	</head>
+	<body> </body>
+</html>
