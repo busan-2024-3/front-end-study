@@ -50,6 +50,45 @@
 				alert('보기 중에 없는 사이트 입니다.');
 				break;
 		}
+
+		// 반복문
+		// for (초기화; 조건식; 증감식) { 실행할 코드; }
+
+		for (let i = 0; i < 5; i++) {
+			if (i % 2 === 0) {
+				document.write(
+					`<p style="color: red;"> 반복문 ${i}</p>`,
+				);
+			} else {
+				document.write(
+					`<p style="color: blue;"> 반복문 ${i}</p>`,
+				);
+			}
+		}
+
+		// 배열 사용시 반복문
+		const array = [2, 3, 4, 5, 6];
+		for (let index = 0; index < array.length; index++) {
+			const element = array[index];
+			console.log(element);
+		}
+
+		// 배열.forEach((요소, 인덱스, 배열)=>{
+		// 	명령줄;
+		// });
+		array.forEach(element => {
+			console.log(element);
+		});
+
+		// for (인덱스 in 배열){
+		// 	명령줄;
+		// }
+		for (const j of array) {
+			// if (Object.prototype.hasOwnProperty.call(object, key)) {
+			// 	const element = object[key];
+			// }
+			console.log(j, array[j]);
+		}
 	</script>
 </head>
 

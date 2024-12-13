@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Math</title>
+	<script>
+		// Math
+		console.log(`원주율: ${Math.PI}`);
+		console.log(`오일러 상수: ${Math.E}`);
+
+		// abs()		=> 절대값
+		console.log('------abs()-------');
+		console.log(`abs(-3): ${Math.abs(-3)}`);
+		console.log(`abs('-2'): ${Math.abs('-2')}`);
+		console.log(`abs('Korea'): ${Math.abs('Korea')}`);
+		console.log(`abs(null): ${Math.abs(null)}`);
+
+		// ceil()		=> 올림
+		console.log('------ceil()-------');
+		console.log(Math.ceil(0.95)); // 1
+		console.log(Math.ceil(5.00000001)); // 6
+		console.log(Math.ceil(5));
+		console.log(Math.ceil(-0.95)); // -0 자바스크립트는 0과 -0을 구분함
+
+		// floor()	=> 내림
+		console.log('------floor()-------');
+		console.log(Math.floor(0.95)); // 0
+		console.log(Math.floor(5.00000001)); // 5
+		console.log(Math.floor(5)); // 5
+		console.log(Math.floor(-0.95)); // -1
+		console.log(Math.floor(null)); // -1
+
+		// trunc()	=> 버림
+		console.log('------trunc()-------');
+		console.log(Math.trunc(0.95)); // 0
+		console.log(Math.trunc(5.00000001)); // 5
+		console.log(Math.trunc(5)); // 5
+		console.log(Math.trunc(-0.95)); // -0
+
+		// round()	=> 반올림
+		console.log('------round()-------');
+		console.log(Math.round(0.95)); // 0
+		console.log(Math.round(5.00000001)); // 5
+
+		console.log('------참고-------');
+		console.log(0 / 0); // NaN
+		console.log(10 / 0); // Infinity
+		console.log(0.1 + 0.2); // 2진수로 변환하여 계산되기 때문에 오차 발생
+		console.log(0.1 + 0.2 === 0.3);
+
+		// max()
+		console.log('------max()-------');
+		console.log(Math.max(1, 5, 3));
+		console.log(Math.max(-1, -5, -3));
+		const arr1 = [1, 6, 4, 5, 3];
+		console.log(Math.max(arr1)); // NaN
+
+		// min()
+		console.log('------min()-------');
+		console.log(Math.min(1, 5, 3));
+		console.log(Math.min(-1, -5, -3));
+
+		console.log('------참고2-------');
+		// 참고
+		// 스프레드 연산자 : 배열이나 객체를 확장하거나 복사
+		console.log(Math.max(...arr1));
+		console.log(arr1); // 배열 형태로 출력
+		console.log(...arr1); // 각 요소를 출력
+		const arr2 = [...arr1]; // 스프레드 된 배열을 다시 배열에 넣으면 배열이 된다다
+		console.log(arr2);
+
+		// pow(및, 지수) / 및 ** 지수 : 거듭제곱 (지수연산)
+		console.log('------pow()-------');
+		// console.log(Math.pow(5,2));
+		console.log(5 ** 2);
+
+		// random()	=> 0~1미만의 난수 발생
+		console.log('------random()-------');
+		for (let i = 0; i < 5; i++) {
+			console.log(Math.random());
+		}
+
+		for (let i = 0; i < 5; i++) {
+			// 0~10미만
+			console.log(Math.trunc(Math.random() * 10));
+		}
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
