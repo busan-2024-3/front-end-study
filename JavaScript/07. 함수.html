@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>function</title>
+	<script>
+		/*
+				Function
+				1. 함수의 문법
+					- 명명규칙 : 영문자, _, $ 사용가능, 숫자와 특수문자는 첫 문자로 사용불가
+					- 명명관례 : 동사로 시작, 두 개 이상의 단어는 카멜케이스
+					- function 함수이름(param1, param2, param3...){
+						// 실행할 코드
+						}
+						const [반환값을 저장할 변수이름] = 함수이름(arg1, arg2, arg3...);
+				2. 반환값
+					- return을 만나면 함수의 실행을 중지하고
+					호출한 곳으로 리턴 값을 반환한다.
+					- return을 작성하지 않으면 undefined를 반환
+		*/
+
+		// 함수를 선언
+		function newFunction(a, b) {
+			return a + b;
+		}
+		// 함수 호출부
+		const result = newFunction(2, 3);
+		console.log(result);
+
+		// 함수 표현식 : 변수에 익명함수를 할당
+		const result2 = function (a, b) {
+			return a + b;
+		};
+		console.log(result2(2, 3));
+
+		// 화살표 함수
+		const result3 = (a, b) => a + b;
+		console.log(result3(2, 3));
+
+		/*
+			스코프 (Scope)
+				자바스크립트는 변수 선언방식(var, let, const)과
+				코드 작성 구조에 따라 스코프가 달라진다.
+
+				* 전역 스코프
+					스크립트 내 어디서든 접근 가능한 변수 (스크립트 내에서 전역으로 동작)
+				* 지역 스코프
+					함수나 블록 내부에서 선언된 변수는 해당 범위 안에서만 유효함
+					- 함수 스코프
+						함수 내부에서 선언된 변수는 함수 내부에서만 접근 가능
+					- 블록 스코프
+						블록 내부에서 선언된 변수는 블록 외부에서 접근 불가
+
+				var 함수 스코프 / let, const 블록 스코프
+		*/
+
+		function showGlobalVar() {
+			console.log(result);
+		}
+		showGlobalVar();
+
+		// var
+		function example() {
+			const x = 10; // 함수 스코프
+			if (true) {
+				var y = 20; // 블록 내부에서 선언했지만, 함수 전체에서 접근 가능
+
+				console.log(x);
+				console.log(y);
+			}
+			console.log(x);
+			console.log(y); // 블록 바깥에서도 접근 가능
+		}
+
+		example();
+		// console.log(x); // 참조 에러
+		// console.log(y); // 참조 에러
+
+		// let, const
+		function scopeExample() {
+			if (true) {
+				const x = 101;
+				const y = 202;
+				console.log(x);
+				console.log(y);
+			}
+			// console.log(x);	// 참조에러
+			// console.log(y);	// 참조에러
+		}
+
+		scopeExample();
+
+		/* 스코프 체인 (Scope Chain)
+			변수를 찾을 때, 현재 스코프에서 찾고 없으면
+			상위 스코프로 이동하는 구조.
+		*/
+
+		const a = 1;
+		function scopeChainExample() {
+			const b = 2;
+			function scopeChain() {
+				const c = 3;
+				console.log(a, b, c, d);
+			}
+			scopeChain();
+		}
+		scopeChainExample();
+
+		var d = 4;
+		/*
+			var의 사용을 지양하는 이유
+				- 함수 스코프만 지원하여 의도치 않은 접근 가능
+				- 중복 선언 허용으로 인해 값 덮어쓰기 문제 발생
+				- 호이스팅으로 인해 오류 추적이 어려움
+				- let과 const가 동일한 기능을 더 안전하게 제공
+		*/
+
+		// 함수의 호이스팅 : 함수선언문 이전에 함수를 호출가능
+		hoistingExample();
+		function hoistingExample() {
+			console.log('hoisted function');
+		}
+
+		// 함수표현식으로 정의한 함수는 호이스팅되지 않음
+		// hello();
+		// const hello = function() {
+		// 	console.log('hello, world');
+		// };
+
+		// var로 선언한 함수 표현식의 경우
+		// console.log(hello2);
+		// hello2();
+		// var hello2 = function () {
+		// 	console.log("아무거나문자열");
+		// };
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

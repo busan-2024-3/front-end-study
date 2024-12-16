@@ -11,7 +11,7 @@ node_modules/
 # 환경 설정 파일
 .prettierignore
 .prettierrc
-.eslintrc.json
+# .eslintrc.json
 
 # 로그 파일
 npm-debug.log

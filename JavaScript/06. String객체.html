@@ -39,6 +39,22 @@
 		console.log(strAdd.toUpperCase());
 		console.log(strAdd.toLowerCase());
 		console.log(str1.trim());
+		//							0	1	2 3
+		const newStr = '새로운 문자열';
+		console.log(newStr.substring(0, 4).length);
+		console.log(newStr.substring(0, 4).trim().length);
+		console.log(newStr.substring(0, 5).trim());
+		console.log(newStr.substring(3));
+		console.log(newStr.substring(3).trim());
+		console.log(newStr.substring(-3)); // 0보다 작으면 0으로 취급
+
+		// replace
+		const hello = 'hello world';
+		console.log(hello.replace('hello', '홍길동'));
+		
+		// search()
+		console.log(hello.search('l'));
+		console.log(hello.indexOf('l'));
 	</script>
 </head>
 

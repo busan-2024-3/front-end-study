@@ -1,85 +1,78 @@
 {
-    "env": {
-        "browser": true,
-        "node": true,
-        "commonjs": true,
-        "es2022": true
-    },
-    "globals": {
-        "_": true,
-        "browser": true
-    },
-    "plugins": [
-        "html",
-        "prettier",
-        "import"
-    ],
-    "extends": [
-        "plugin:prettier/recommended",
-        "eslint:recommended",
-        "airbnb-base",
-        "prettier"
-    ],
-    "overrides": [
-        {
-            "files": [
-                "*.html"
-            ],
-            "plugins": [
-                "html"
-            ]
-        }
-    ],
-    "rules": {
-        "no-console": "warn",
-        "no-plusplus": "off",
-        "vars-on-top": "off",
-        "no-underscore-dangle": "off",
-        "comma-dangle": "off",
-        "func-names": "off",
-        "prefer-template": "off",
-        "no-nested-ternary": "off",
-        "max-classes-per-file": "off",
-        "consistent-return": "off",
-        "no-restricted-syntax": [
-            "off",
-            "ForOfStatement"
-        ],
-        "prefer-arrow-callback": "error",
-        "require-await": "error",
-        "arrow-parens": "off",
-        "no-param-reassign": [
-            "error",
-            {
-                "props": false
-            }
-        ],
-        "no-unused-expressions": [
-            "error",
-            {
-                "allowTernary": true,
-                "allowShortCircuit": true,
-                "allowTaggedTemplates": true
-            }
-        ],
-        "import/no-extraneous-dependencies": [
-            "error",
-            {
-                "devDependencies": true
-            }
-        ],
-        "max-len": "off",
-        "prettier/prettier": [
-            "error",
-            {
-                "endOfLine": "auto",
-                "htmlWhitespaceSensitivity": "ignore"
-            }
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "guard-for-in" :"off"
-    }
+	"env": {
+		"browser": true,
+		"node": true,
+		"commonjs": true,
+		"es2022": true
+	},
+	"globals": {
+		"_": true,
+		"browser": true
+	},
+	"plugins": ["html", "prettier", "import"],
+	"extends": [
+		"plugin:prettier/recommended",
+		"eslint:recommended",
+		"airbnb-base",
+		"prettier"
+	],
+	"overrides": [
+		{
+			"files": ["*.html"],
+			"plugins": ["html"]
+		}
+	],
+	"rules": {
+		"no-console": "warn",
+		"no-plusplus": "off",
+		"vars-on-top": "off",
+		"no-underscore-dangle": "off",
+		"comma-dangle": "off",
+		"func-names": "off",
+		"prefer-template": "off",
+		"no-nested-ternary": "off",
+		"max-classes-per-file": "off",
+		"consistent-return": "off",
+		"no-restricted-syntax": ["off", "ForOfStatement"],
+		"prefer-arrow-callback": "error",
+		"require-await": "error",
+		"arrow-parens": "off",
+		"no-param-reassign": [
+			"error",
+			{
+				"props": false
+			}
+		],
+		"no-unused-expressions": [
+			"error",
+			{
+				"allowTernary": true,
+				"allowShortCircuit": true,
+				"allowTaggedTemplates": true
+			}
+		],
+		"import/no-extraneous-dependencies": [
+			"error",
+			{
+				"devDependencies": true
+			}
+		],
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"js": "always"
+			}
+		],
+		"max-len": "off",
+		"prettier/prettier": [
+			"error",
+			{
+				"endOfLine": "auto",
+				"htmlWhitespaceSensitivity": "ignore"
+			}
+		],
+		"semi": ["error", "always"],
+		"guard-for-in": "off"
+	}
 }
