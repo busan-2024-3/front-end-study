@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM Event</title>
+	<script>
+		/*
+			이벤트란?
+				DOM의 일부.
+				사용자와 웹 페이지 사이의 상호작용을 다룰 수 있도록 만들어진 기능.
+				브라우저가 제공하는 이벤트 시스템의 일부
+				상태변화나 행동을 나타내는 신호
+
+				- 이벤트는 이벤트 객체와 함께 작동한다.
+				- 이벤트는 DOM트리와 연결된 개념이다.
+				- 이벤트는 리스너를 통해 처리된다.
+				- 이벤트를 감지하면 브라우저가 자동으로 콜백 함수를 실행한다.
+
+			이벤트 핸들러 추가 방식
+			1. HTML 인라인 이벤트 핸들러
+				: 빠르지만 유지보수 어려움
+			2. DOM 요소의 프로퍼티에 이벤트핸들러 할당
+				: 간단하지만 하나의 핸들러만 설정 가능
+			3. addEventListener 메서드를 사용
+				: 가장 많이 사용되는 표준 방식
+
+		*/
+	</script>
+	<script>
+		// 1.
+
+		/* 아래 변수 선언이 전역으로 동작하지 않는 이유
+			= DOM객체가 완성되지 않았는데 객체를 변수에 할당했기 때문에
+			const inputName = document.getElementById('inputName');
+
+			* 해결흐름
+			1. 돔 객체가 완성되지 않아서 -> 라고 하니까 DOMContentLoaded를 지정
+			1-1. 이벤트 핸들러가 HTML요소에 인라인으로 지정되어 있기 때문에
+						해당 함수가 전역에 속해야만 함수를 찾을 수 있음.
+						변수를 (DOMContentLoaded안/콜백함수밖)에 넣으면서 전역으로 동작하지 않게 됨
+			2. 암묵적으로 전역 객체인 window에 할당된 변수를 사용하기.
+			2-1. id값을 설정한 경우 브라우저가 암시적으로
+					window.[id값]을 전역변수로 생성하기 때문에 바로 사용할 수 있다.
+			2-2. 이 경우 또한 window.[id값]이라는 변수가 전역으로
+					동작해야 하기 때문에 이벤트리스너 블록에 넣지 않도록 한다.
+					(콜백함수 또한 전역으로 동작해야하기 때문에
+						DOMContentLoaded이벤트 블록 안에 넣지 않는다.)
+			2-2*. 명시적으로 전역객체에 등록해 주는 편이 유지보수에 유리하기 때문에
+						window.[id값] = document.getElementById('id값');으로 할당해 주는것이 권장된다.
+						(그러나 현재 스크립트가 위치한 곳에서 명시적으로 할당할 경우
+						DOM객체가 아직 완성되지 않은 문제는 변하지 않기 때문에 할당불가)
+			3. 변수에 의존하지 않고 직접 접근한다.
+					함수 내에서 매번 DOM요소에 직접 접근하는 경우
+					인라인으로 지정된 이벤트 핸들러가 콜백으로 함수를 부르기 때문에
+					해당 노드가 생성된 후 동작하게 된다. 따라서 문제가 발생하지 않는다.
+			4. 해당 요소가 만들어진 뒤에 스크립트를 배치한다.
+			5. DOMContentLoaded이벤트블록 안에 배치하고싶은 경우는
+					HTML 인라인 이벤트 핸들러대신 이벤트리스너를 사용하여
+					이벤트와 콜백함수를 연결해 준다.
+		*/
+		// change 이벤트
+		// window.inputName = document.getElementById('inputName');
+		const upperCase = () => {
+			console.log('upperCase 실행');
+			window.inputName.value =
+				window.inputName.value.toUpperCase();
+		};
+
+		// focuson
+		const focusOn = () => {
+			console.log('onfocus 실행');
+			window.inputName.style.backgroundColor = 'red';
+		};
+
+		// focusout
+		const focusOut = () => {
+			console.log('onfocusout 실행');
+			window.inputName.style.backgroundColor = 'white';
+		};
+
+		// click
+		const btnClick = () => {
+			console.log('onclick 실행');
+			document.getElementById('inputName').value = '';
+		};
+
+		// mouseover
+		const changeRed = () => {
+			document.getElementById('mouse').style.color = 'red';
+		};
+		// mouseout
+		const changeBlue = () => {
+			document.getElementById('mouse').style.color = 'blue';
+		};
+	</script>
+</head>
+
+<body>
+	<label for="inputName">이름입력 :</label>
+	<input type="text" name="inputName" id="inputName" onchange="upperCase()" onfocus="focusOn()" onfocusout="focusOut()">
+	<button type="button" value="초기화" onclick="btnClick()">초기화</button>
+
+	<br><br>
+
+	<div id="mouse" onmouseover="changeRed()" onmouseout="changeBlue()" style="font-size: x-large;">마우스를 올려보세요</div>
+
+</body>
+
+</html>

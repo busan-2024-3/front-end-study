@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Modularization</title>
+	<script type="module">
+		import calculator, {
+			alertResult,
+		} from './js_folder/calculator.js';
+
+		alertResult();
+		calculator();
+		/*
+			모듈화
+
+			시스템이 프로그램을 독립적이고 재사용 가능한 단위(모듈)로 나누는 과정
+			하나의 특정 기능을 담당하도록 한다.
+
+			1. 모듈 정의 (export)
+				모듈로 정의하고자 하는 함수 혹은 표현식에 export 예약어를 붙인다.
+			2. 모듈을 가져오기 (import)
+				import [default로 export한 함수이름], {[가져올 함수 이름 or 변수이름]} from [스크립트 경로];
+				- default로 export한 경우 중괄호 안에 넣지 않는다.
+			3. 모듈을 사용하는 스크립트 작성
+				모듈 스크립트 (import구문을 사용하는 스크립트)를 사용하려면
+				<script> 태그에 type="module" 속성을 추가한다.
+		*/
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

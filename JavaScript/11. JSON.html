@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JSON</title>
+	<script>
+		/*
+			JSON (JavaScript Object Notation)
+				- 자바스크립트 객체 표기법을 기반으로 한 데이터 교환 형식
+				- 웹 어플리케이션에서 서버와 클라이언트 간의
+					데이터를 교환하는 데 자주 사용됨.
+		*/
+		// 문자열을 JSON형식으로 작성하고 그 문자열을 JSON객체로 파싱
+		let jsonString = '{"id":"aaa", "title":"bbb"}';
+		console.log('=== 문자열 ===');
+		console.log(typeof jsonString);
+		console.log(jsonString.id);
+		console.log(jsonString.title);
+
+		console.log('=== 문자열 => JSON객체 ===');
+		const parsedStr = JSON.parse(jsonString); // 문자열을 JSON 객체로 변환
+		console.log(typeof parsedStr);
+		console.log(parsedStr.id);
+		console.log(parsedStr.title);
+
+		/*
+			JSON 형식 규칙
+				- 키(key)는 반드시 큰따옴표로 감싸진 문자열이어야 한다.
+				- 값(value)는 문자열, 숫자, 불리언, 배열, 객체, null이 들어갈 수 있다.
+					함수나 undefined는 들어갈 수 없음.
+		*/
+
+		window.onload = function () {
+			const person = {
+				name: '김학생',
+				age: 30,
+				isStudent: true,
+				courses: ['IT', 'Japanese'],
+				address: {
+					street: '충장대로 11',
+					city: '중구',
+					state: '부산시',
+				},
+			};
+			// 객체를 JSON 문자열로 변환
+			jsonString = JSON.stringify(person);
+			console.log(jsonString);
+			console.log(typeof jsonString);
+
+			// 수신 입장
+			const jsonString2 =
+				'{"name":"김학생","age":30,"isStudent":true,"courses":["IT","Japanese"],"address":{"street":"충장대로 11","city":"중구","state":"부산시"}}';
+			// JSON 문자열을 객체로 변환하여 그 안의 key와 value를 점 표기법으로 확인해보자
+			const person2 = JSON.parse(jsonString2);
+			console.log(person2);
+			console.log(typeof person2);
+			console.log(person2.city);
+			console.log(person2.courses[1]);
+			console.log(person2.address.city);
+
+			const contents = document.querySelector('.contents');
+
+			let str = ``;
+			str += `<table>`;
+			str += `${person2.courses[1]}`;
+			str += `</table>`;
+			contents.innerHTML = str;
+			console.log(contents);
+		};
+	</script>
+</head>
+
+<body>
+	<div class="contents"></div>
+</body>
+
+</html>

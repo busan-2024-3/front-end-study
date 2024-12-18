@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document Object Model</title>
+	<script async></script>
+	<script>
+		/*
+			파싱 Parsing
+			: 구문 분석, 프로그래밍 언어의 문법에 맞게 작성된 텍스트 문서를 읽어들이고
+				문자열을 분해하고 재생성 하는과정 (데이터의 재구성)
+		*/
+		/*
+			렌더링에 의한 스크립트 실행이 방해되지 않는 방법
+
+			- script 태그에 defer 속성 추가
+				자바스크립트 파일의 로드가 비동기적으로 동시에
+				진행된다는 점은 async와 같으나 스크립트의 실행자체는
+				DOM이 완전히 로드된 후 실행
+
+			- DOMContentLoaded 이벤트 사용
+				document.addEventListener('DOMContentLoaded', function(){
+					// 실행할 명령
+				});
+				HTML이 로드 및 파싱이 완료되면 실행하도록 하고싶을때
+
+			- window.onload 이벤트 사용
+				window.onload = function(){
+					// 실행할 명령
+				};
+				페이지의 모든 리소스가 로드된 후 실행
+
+			- script 태그를 body태그 아래에 위치시킨다.
+		*/
+		/*
+			DOM (Document Object Model) : 문서 객체 모델
+				document의 구조를 설명하는 아키텍처
+				웹 페이지에서의 객체 지향 표현
+				웹 페이지내의 요소에 접근할 수 있도록 고안된 개념, 인터페이스
+
+			HTML 요소 찾기
+				- document.getElementById('아이디')
+					: id로 요소 찾기
+				- document.getElementsByTagName('태그이름')
+					: 태그 이름으로 요소 찾기
+				- document.getElementsByClassName('클래스명')
+					: 클래스 이름으로 요소 찾기
+				- document.querySelector('선택자')
+					선택자를 통해 단일 요소 찾기
+				- document.querySelectorAll('선택자')
+					선택자를 통해 여러개 요소 찾기
+
+			찾을 수 있는지 확인하기
+				가져온요소.matches('선택자'); 불리언값을 반환
+
+			HTML 요소 변경하기
+				- 요소내의 컨텐츠 변경
+					가져온element.innerHTML = HTML컨텐츠
+				- 요소가 가진 속성
+					가져온element.[속성의 이름] = 변경할 속성 값
+				- 요소의 스타일
+					가져온element.style.[css의 속성 이름] = 변경할 스타일 값
+				* 바로 접근할 수 없는 속성의 경우
+					- 속성을 추가 할 때
+						setAttribute(이름, 값)
+					- 속성의 값을 가져오고 싶을 때
+						getAttribute(속성이름)
+			
+			찾을 수 있는지 확인하기
+		*/
+		window.onload = function () {
+			const demo = document.getElementById('demo');
+			console.log(demo);
+			const pTags = document.getElementsByTagName('p');
+			console.log(pTags[0].innerHTML);
+			const demoClass = document.getElementsByClassName('demo');
+			console.log(demoClass);
+
+			const selectedIdDemo = document.querySelector('#demo');
+			console.log(selectedIdDemo);
+			const selectedClassDemo =
+				document.querySelectorAll('.demo');
+			console.log(selectedClassDemo);
+
+			const childEle = document.querySelector(
+				'.demo1 > #demo1',
+			);
+			console.log(childEle);
+
+			const something = document.getElementsByName('name');
+			console.log(something[0]);
+
+			const selectDemo1 = document.getElementById('demo1');
+			selectDemo1.matches('.demo1>#demo1');
+			console.log(selectDemo1.matches('.demo1>#demo1'));
+			console.log(selectDemo1.matches('.demo>#demo1'));
+
+			const inputTag = document.getElementsByTagName('input');
+			inputTag[0].value = 'password';
+			inputTag[0].style.color = 'red';
+			inputTag[0].class = 'ddd'; // 안됨
+			inputTag[0].setAttribute('class', 'ddd');
+			console.log(inputTag[0].getAttribute('class'));
+			console.log(inputTag[0]);
+
+			selectDemo1.style.color = 'red';
+		};
+	</script>
+</head>
+
+<body>
+	<p id="demo">안녕하세요</p>
+	<p class="demo">안녕하세요1</p>
+	<p class="demo">안녕하세요2</p>
+	<div class="demo1">
+		<div id="demo1">선택자 여러가지 써 보기</div>
+	</div>
+	<input type="text" name="name" id="name" value="홍길동">
+</body>
+<script>
+</script>
+
+</html>

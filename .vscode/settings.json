@@ -30,5 +30,8 @@
   "cSpell.words": [
     "busan",
     "htmlhint"
-  ]
+  ],
+  "workbench.editor.tabSizingFixedMaxWidth": 160,
+  "emmet.triggerExpansionOnTab": false,
+  "prettier.useTabs": true
 }

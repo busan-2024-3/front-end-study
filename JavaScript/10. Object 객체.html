@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Object</title>
+	<script>
+		/*
+			* Object
+			데이터를 구조화하고 저장하는 방법
+			- { key : value } 의 형태
+			- key의 따옴표는 생략 가능
+		*/
+
+		// 1. 객체 리터럴
+		const obj1 = {
+			// 키 값은 유효한 식별자를 지정할 것. (명명규칙, name convention)
+			// 객체 프로퍼티, 객체 속성
+			name: '홍길동',
+			age: 30,
+		};
+		console.log(obj1);
+
+		// 2. 객체 생성자 :
+		// 	new 예약어를 통해 생성자를 호출하기 / 비어있는 객체 리터럴로 변수 초기화하기
+		// const obj2 = new Object();
+		const obj2 = {};
+		obj2.name = '강감찬';
+		obj2.age = 99;
+		console.log(obj2);
+
+		// 3. 클래스로 정의한 객체를 생성
+		class Human {
+			constructor(name, age) {
+				this.name = name;
+				this.age = age;
+			}
+		}
+		const obj3 = new Human('이순신', 50);
+		console.log(obj3);
+
+		// 객체의 속성 접근방법
+		// 1. 속성선택자 점 표기
+		console.log('---- . ----');
+		console.log(obj2.name);
+		console.log(obj2.age);
+
+		// 2. 대괄호 표기		// 지양 표현
+		// console.log('---- [] ----');
+		// console.log(obj2['name']);
+		// console.log(obj2['age']);
+
+		// 객체 구조
+		// 객체 프로퍼티의 값에는 객체도 함수도 들어갈 수 있다.
+		const x = {
+			a: 123,
+			b: 'ABC',
+			c: true,
+			d: { a: 'a', b: 'b', c: 'c' },
+			e() {
+				alert('메서드 실행');
+			},
+		};
+		console.log(x);
+		// 객체가 가진 메서드를 호출
+		// x.e();
+
+		const person = {
+			firstName: '길동',
+			lastName: '홍',
+			id: 'hong',
+			// 객체의 메서드 안에서 해당 객체를 this로 가리키며 객체의 프로퍼티 값을 사용할 수 있다.
+			fullName() {
+				return this.firstName + ' ' + this.lastName;
+			},
+		};
+
+		// 객체의 속성 처리
+		console.log('====객체의 속성 처리====');
+		// 속성 추가
+		person.age = 30;
+		// 속성 변경
+		person.lastName = '김';
+		// 대괄호 표기법으로 호출 가능하나, 점 연산자가 선호되는 경향이 큼
+		// person['firstName'] = '개똥';
+		// 속성 삭제
+		delete person.id;
+
+		console.log(person);
+
+		console.log('----출력1----');
+		console.log(person.firstName);
+		console.log(person.lastName);
+		console.log(person.id); // 없는 속성을 가리킬 경우 undefined
+		console.log(person.age);
+		console.log(person.fullName()); // 객체 내의 함수를 호출
+
+		console.log('----출력2----');
+		// for ~ in
+		// 구문을 활용하여 객체의 프로퍼티를 하나씩 호출할 수 있다.
+		console.log(person);
+		for (const item in person) {
+			// console.log(item);
+			console.log(person[item]);
+		}
+
+		// 상속 예
+		// 부모클래스 Person객체를 만드는 틀을 클래스 문법으로 정의
+		class Person {
+			// 생성자
+			constructor(name, age) {
+				this.name = name;
+				this.age = age;
+			}
+
+			// 메서드
+			greet() {
+				return `안녕하세요, 저는 ${this.name}입니다.`;
+			}
+		}
+		// 자식 클래스 Employee객체를 만드는 틀을 Person클래스를 상속하여 정의
+		class Employee extends Person {
+			constructor(name, age, position) {
+				super(name, age); // 부모 클래스 생성자 호출
+				this.position = position;
+			}
+
+			introduce() {
+				return `${super.greet()} 직책은 ${this.position}입니다.`;
+			}
+		}
+
+		// 객체 생성
+		// 생성자를 호출하는 키워드 new
+		// 생성자가 요구하는 인자를 올바르게 넣을 것.
+		/* 생성자 내에서 유효성 검사를 시행하거나, 생성자에 인자가 제공되는
+			시점에 예외처리를 시행하는 등의 처리를 할 것.	*/
+		const person1 = new Person('서희연', 99);
+		const employee1 = new Employee('김철수', 25, '개발자');
+
+		console.log(person1.greet());
+		console.log(employee1.introduce());
+
+		// 객체를 한 변수에 여러개 담을 때
+		const objects = [
+			{ name: '스펀지밥', color: 'yellow' },
+			{ name: '뚱이', color: 'pink' },
+			{ name: '징징이', color: 'mint' },
+		];
+
+		for (const item of objects) {
+			console.log(`이름: ${item.name}, 색깔: ${item.color}`);
+		}
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

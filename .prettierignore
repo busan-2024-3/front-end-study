@@ -10,7 +10,7 @@ node_modules/
 
 # 환경 설정 파일
 .prettierignore
-.prettierrc
+# .prettierrc
 # .eslintrc.json
 
 # 로그 파일

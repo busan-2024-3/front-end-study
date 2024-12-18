@@ -37,6 +37,7 @@
 		"prefer-arrow-callback": "error",
 		"require-await": "error",
 		"arrow-parens": "off",
+		"indent": ["error", "tab", { "SwitchCase": 1 }],
 		"no-param-reassign": [
 			"error",
 			{
