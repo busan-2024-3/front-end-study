@@ -19,6 +19,7 @@
     </fieldset>
     <fieldset>
       <legend>과목</legend>
+      <!-- Practice_JavaScript : 아래 요소의 체크 상태를 브라우저 콘솔로 확인해 보세요.-->
       <label for="option-html">HTML</label>
       <input type="checkbox" name="subject" id="option-html" value="option-html" />
       <label for="option-css">CSS</label>
@@ -28,17 +29,31 @@
 
       <br /><br />
 
+      <!-- Practice_JavaScript : 아래 요소의 체크 상태를 자바스크립트로 확인해 보세요. -->
       <label for="upper">상</label>
-      <input type="radio" name="grade" id="upper" value="upper" />
+      <input type="radio" name="grade" id="upper" value="upper" checked />
       <label for="middle">중</label>
       <input type="radio" name="grade" id="middle" value="middle" />
       <label for="lower">하</label>
       <input type="radio" name="grade" id="lower" value="lower" />
     </fieldset>
+
+    <!-- Practice_JavaScript : 과목 필드셋의 입력치를 아래 div.realtime-input에 출력하세요. -->
+    <hr>
+    <span>과목정보 실시간 입력치</span>
+    <div class="realtime-input"></div>
+
+    <hr>
     <!-- <input type="submit" value="전송"> -->
     <button type="submit">전송</button>
     <!-- <input type="reset" value="취소"> -->
     <button type="reset">취소</button>
+
+    <br><br>
+
+    <!-- Practice_JavaScript : 전송버튼을 누르면 비밀번호를 제외한 입력정보들을 아래 div.submitted-results에 출력하세요. -->
+    <span>전송된 결과</span>
+    <div class="submitted-results"></div>
   </form>
 </body>
 

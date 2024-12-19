@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS 선택자 연습</title>
+  <style>
+    /* Practice_CSS : 외부 스타일 시트를 참조하도록 하세요.
+    문제가 들어있는 스타일 시트는 현재의 HTML파일과 같은 이름으로 제공되었습니다. */
+  </style>
+  <link rel="stylesheet" href="../CSS/css_folder/practice-selector-01.css">
+</head>
+
+<body>
+  <h1>CSS 선택자와 우선순위</h1>
+
+  <div class="container">
+    <p>이 문장은 컨테이너의 직속 자식입니다.</p>
+    <div class="box">
+      <p>이 문장은 박스 내부의 문장입니다.</p>
+    </div>
+    <p>다시 컨테이너의 직속 자식입니다.</p>
+  </div>
+
+  <h2 class="highlight">클래스 선택자</h2>
+  <h2 id="special">아이디 선택자</h2>
+
+  <div class="box highlight">
+    <p class="inline-example">이 문장은 인라인 스타일이 적용되었습니다.</p>
+  </div>
+
+  <div class="box">
+    <p class="important">이 문장은 !important 속성이 적용되었습니다.</p>
+  </div>
+
+  <h2 class="title">그룹 선택자 예제</h2>
+
+  <p>속성 선택자 예제: <a href="https://example.com" target="_blank">새 창에서 열리는 링크</a></p>
+
+</body>
+
+</html>
