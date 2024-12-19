@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Browser Object Model</title>
+	<script>
+		/*
+			BOM : Browser Object Model
+			- BOM은 브라우저와 관련된 객체 모델을 의미.
+				브라우저 환경을 제어하거나 정보를 얻을 수 있는 다양한 객체를 포함한다.
+			
+			- 주요 BOM 객체 :
+				1. window: 최상위 객체
+				2. screen: 디스플레이 크기 및 해상도 관련 정보
+				3. window.location: 현재 문서의 URL정보와 이동 관련 기능 제공
+				4. navigator: 브라우저 및 사용자 정보 제공
+				5. alert/confirm/prompt: 사용자 인터페이스 관련
+				6. history: 브라우저 방문 기록
+				7. document: DOM과 연동하는 객체
+				8. 시간관련 속성, 메서드
+						window. 생략 가능
+						setTimeout()
+						clearTimeout()
+						setInterval()
+						clearInterval()
+		*/
+
+		// window : 열기 닫기 창 내부 높이 너비
+		function closeWindow() {
+			window.close();
+			// 대부분의 브라우저에서는 보안상 스크립트를 통하여 열리지 않은 창은 닫을 수 없음.
+		}
+		function openWindow() {
+			// window.open(URL, target, 문자열)
+			// window.open('https://www.naver.com');
+
+			const width = screen.width / 2;
+			const height = screen.height / 2;
+			const left = screen.width / 4;
+			const top = screen.height / 4;
+
+			window.open(
+				'https://www.naver.com',
+				'_blank',
+				`top=${top},left=${left},width=${width},height=${height}`,
+			);
+		}
+
+		// screen
+		function screenInfo() {
+			// 화면의 너비와 높이를 px단위로 가져온다.
+			const x = screen.width;
+			const y = screen.height;
+			alert(`${x}*${y}`);
+		}
+
+		// location
+		function locationHref() {
+			// location이 가지고 있는 프로퍼티 href, hostname, pathname, protocol
+			// window.location.href = 'https://www.google.com';
+			alert(window.location.protocol);
+		}
+
+		// navigator : online language platform appVersion cookieEnabled
+		function navigatorInfo() {
+			alert(navigator.appVersion);
+		}
+
+		// alert/confirm/prompt
+		function alertWindow() {
+			alert('경고창 확인');
+		}
+		function confirmWindow() {
+			// 반환값 boolean
+			const result = confirm('삭제하시겠습니까?');
+			alert(result);
+		}
+		function promptWindow() {
+			// 반환값 string | null
+			const result = prompt('값을 입력해주세요');
+			alert(result);
+		}
+
+		// history
+		function goFoward() {
+			history.forward();
+		}
+		function goBack() {
+			history.back();
+		}
+	</script>
+</head>
+
+<body>
+	<input type="button" onclick="closeWindow()" value="창 닫기">
+	<input type="button" onclick="openWindow()" value="창 열기">
+	<input type="button" onclick="screenInfo()" value="화면 정보">
+	<input type="button" onclick="locationHref()" value="주소정보확인">
+	<input type="button" onclick="navigatorInfo()" value="브라우저 정보">
+	<input type="button" onclick="alertWindow()" value="경고창">
+	<input type="button" onclick="confirmWindow()" value="확인창">
+	<input type="button" onclick="promptWindow()" value="입력창">
+	<input type="button" onclick="goFoward()" value="앞으로">
+	<input type="button" onclick="goBack()" value="뒤로">
+
+
+	<input type="button" onclick="" value="">
+</body>
+
+</html>

@@ -1,23 +1,18 @@
 {
 	"extends": [
-		"stylelint-prettier/recommended",
-		"stylelint-config-standard"
+		"stylelint-config-standard",
+		"stylelint-prettier/recommended"
 	],
-	"plugins": [
-		"stylelint-order",
-		"stylelint-prettier"
-	],
+	"plugins": ["stylelint-order", "stylelint-prettier"],
 	"rules": {
 		"color-no-invalid-hex": true,
 		"declaration-block-no-redundant-longhand-properties": true,
 		"property-no-unknown": true,
-		"selector-max-id": 0,
 		"block-no-empty": true,
 		"media-feature-name-no-unknown": true,
 		"no-duplicate-selectors": true,
 		"no-unknown-animations": true,
 		"font-family-no-duplicate-names": true,
-		"order/properties-alphabetical-order": true,
-		"no-unsupported-browser-features": true
+		"order/properties-alphabetical-order": true
 	}
 }

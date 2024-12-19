@@ -32,7 +32,7 @@
 		// 1.
 
 		/* 아래 변수 선언이 전역으로 동작하지 않는 이유
-			= DOM객체가 완성되지 않았는데 객체를 변수에 할당했기 때문에
+			=> DOM객체가 완성되지 않았는데 객체를 변수에 할당했기 때문에
 			const inputName = document.getElementById('inputName');
 
 			* 해결흐름
@@ -48,8 +48,8 @@
 					(콜백함수 또한 전역으로 동작해야하기 때문에
 						DOMContentLoaded이벤트 블록 안에 넣지 않는다.)
 			2-2*. 명시적으로 전역객체에 등록해 주는 편이 유지보수에 유리하기 때문에
-						window.[id값] = document.getElementById('id값');으로 할당해 주는것이 권장된다.
-						(그러나 현재 스크립트가 위치한 곳에서 명시적으로 할당할 경우
+						const 또는 let 으로 할당해 주는것이 권장된다.
+						(그러나 현재 script태그가 위치한 곳에서 명시적으로 할당할 경우
 						DOM객체가 아직 완성되지 않은 문제는 변하지 않기 때문에 할당불가)
 			3. 변수에 의존하지 않고 직접 접근한다.
 					함수 내에서 매번 DOM요소에 직접 접근하는 경우
@@ -85,7 +85,22 @@
 			console.log('onclick 실행');
 			document.getElementById('inputName').value = '';
 		};
+	</script>
+</head>
 
+<body>
+	<label for="inputName">이름입력 :</label>
+	<input type="text" name="inputName" id="inputName" onchange="upperCase()">
+	<button type="button" value="초기화" onclick="btnClick()">초기화</button>
+	<script>
+		const inputName = document.querySelector('#inputName');
+		inputName.addEventListener('focus', focusOn);
+		inputName.addEventListener('focusout', focusOut);
+	</script>
+	<br><br>
+
+	<div id="mouse" style="font-size: x-large;">마우스를 올려보세요</div>
+	<script>
 		// mouseover
 		const changeRed = () => {
 			document.getElementById('mouse').style.color = 'red';
@@ -94,18 +109,78 @@
 		const changeBlue = () => {
 			document.getElementById('mouse').style.color = 'blue';
 		};
+		const mouseDiv = document.querySelector('#mouse');
+		mouseDiv.onmouseover = changeBlue;
+		mouseDiv.onmouseout = changeRed;
 	</script>
-</head>
 
-<body>
-	<label for="inputName">이름입력 :</label>
-	<input type="text" name="inputName" id="inputName" onchange="upperCase()" onfocus="focusOn()" onfocusout="focusOut()">
-	<button type="button" value="초기화" onclick="btnClick()">초기화</button>
+	<!-- HTML. 이미지가 들어갈 태그 만들기 (img src)-->
+	<img src="../HTML/1. image/images/aaa.jpg" alt="버튼클릭에따라변화하는이미지" id="img1">
+	<!-- HTML. 클릭에 따라 동작할 버튼 만들기 (input button)-->
+	<input type="button" value="변경" id="imgChangeBtn">
+	<!-- HTML. 버튼에 인라인 이벤트 속성 넣어주기 (onclick) -->
+	<!-- JavaScript.  -->
+	<!-- changeImg()-->
+	<script>
+		// 1. 버튼에 할당할 함수 만들기 function 함수이름(매개변수){}
+		// 요소를 가리키는 인덱스로 사용할 변수 선언
+		let i = 1;
+		const changeImg = () => {
+			// 2. 이미지 태그 가리키는 변수 (querySelector(선택자) getElementBy~~)
+			const img = document.querySelector('#img1');
+			// 3. 들어갈 이미지 여러개를 배열에 담기 const 변수명 = [ 파일이름1.확장자, 파일이름2.확장자 ];
+			const imgArr = ['aaa.jpg', 'bbb.jpg', 'ccc.jpg'];
+			// 4(실패). 반복문을 통해 배열의 요소를 이미지 태그의 속성값에 넣어주기 (foreach)
+			// imgArr.forEach(element => {
+			// 	img.src = '../HTML/1. image/images/' + element;
+			// });
+			// 4-1. 배열의 요소를 이미지 태그의 속성값에 넣어주기
+			// 인덱스가 배열의 길이(imgArr.length)보다 길어지면(if) 초기화
+			if (i >= imgArr.length) {
+				i = 0;
+			}
+			img.src = '../HTML/1. image/images/' + imgArr[i];
+			// 인덱스를 가리키는 변수는 클릭시마다 1씩 증가(변수.length)
+			i++;
+		};
+		const imgChangeButton =
+			document.querySelector('#imgChangeBtn');
+		// 기존 함수를 할당시 함수의 이름만 부르면 된다
+		imgChangeButton.onclick = changeImg;
+	</script>
+	<!-- 2. DOM 요소의 프로퍼티에 이벤트핸들러 할당 -->
+	<button id="myButton">myButton</button>
+	<script>
+		const myButton = document.querySelector('#myButton');
+		myButton.onclick = function () {
+			alert('버튼이 클릭되었습니다.');
+		};
+	</script>
+	<!-- 3. addEventListener 메서드를 사용 -->
+	<!-- DOM요소.addEventListener('이벤트종류', 함수); -->
+	<button id="myButton2">myButton2</button>
+	<script>
+		const myButton2 = document.querySelector('#myButton2');
+		myButton2.addEventListener('click', () => {
+			alert('이벤트리스너 사용!');
+		});
+	</script>
 
-	<br><br>
+	<!-- 이벤트 핸들러의 제거 -->
+	<!-- removeEventListener를 사용할 때는 정확히 동일한 함수를 전달할 것 -->
+	<button id="myButton3">myButton3</button>
+	<script>
+		const myButton3 = document.querySelector('#myButton3');
 
-	<div id="mouse" onmouseover="changeRed()" onmouseout="changeBlue()" style="font-size: x-large;">마우스를 올려보세요</div>
+		function handleClick() {
+			alert('이벤트 제거 전');
+		}
 
+		myButton3.addEventListener('click', handleClick);
+
+		// 이벤트 제거
+		// myButton3.removeEventListener('click', handleClick);
+	</script>
 </body>
 
 </html>

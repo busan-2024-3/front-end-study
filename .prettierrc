@@ -1,51 +1,86 @@
 {
-  "singleQuote": true,
-  "bracketSpacing": true,
-  "arrowParens": "avoid",
-  "trailingComma": "all",
-  "semi": true,
-  "bracketSameLine": true,
-  "printWidth": 60,
-  "htmlWhitespaceSensitivity": "strict",
-  "useTabs": true,
-  "htmlSelfClosing": true,
-  "endOfLine": "lf",
-  "singleAttributePerLine": true,
-  "rules": {
-    "prettier/prettier": [
-      true,
-      {
-        "tabWidth": 2
-      }
-    ]
-  },
-  "overrides": [
-    {
-      "files": "*.json",
-      "options": {
-        "tabWidth": 4
-      }
-    },
-    {
-      "files": "*.html",
-      "options": {
-        "tabWidth": 2
-      }
-    },    {
-      "files": "*.js",
-      "options": {
-        "tabWidth": 2
-      }
-    }
-  ],
-  "stylelint": {
-    "extends": [
-      "stylelint-config-idiomatic-order",
-      "./node_modules/prettier-stylelint/config.js"
-    ],
-    "rules": {
-      "indentation": 4,
-      "string-quotes": "single"
-    }
-  }
+	"singleQuote": true,
+	"bracketSpacing": true,
+	"arrowParens": "avoid",
+	"trailingComma": "all",
+	"semi": true,
+	"bracketSameLine": true,
+	"printWidth": 60,
+	"htmlWhitespaceSensitivity": "strict",
+	"useTabs": true,
+	"htmlSelfClosing": true,
+	"endOfLine": "lf",
+	"insert_final_newline": true,
+	"singleAttributePerLine": true,
+	"rules": {
+		"prettier/prettier": [
+			true,
+			{
+				"tabWidth": 2
+			}
+		]
+	},
+	"overrides": [
+		{
+			"files": "*.json",
+			"options": {
+				"tabWidth": 4
+			}
+		},
+		{
+			"files": "*.html",
+			"options": {
+				"tabWidth": 2
+			}
+		},
+		{
+			"files": "*.js",
+			"options": {
+				"tabWidth": 2
+			}
+		},
+		{
+			"files": "*.css",
+			"options": {
+				"insertFinalNewline": true,
+				"indentation": 2
+			}
+		}
+	],
+	"stylelint": {
+		"extends": [
+			"stylelint-config-idiomatic-order",
+			"./node_modules/prettier-stylelint/config.js"
+		],
+		"rules": {
+			"indentation": 4,
+			"string-quotes": "single"
+		},
+		"overrides": [
+			{
+				"files": "*.json",
+				"rules": {
+					"indentation": 4
+				}
+			},
+			{
+				"files": "*.html",
+				"rules": {
+					"indentation": 2
+				}
+			},
+			{
+				"files": "*.js",
+				"rules": {
+					"indentation": 2
+				}
+			},
+			{
+				"files": "*.css",
+				"rules": {
+					"indentation": 2
+				}
+			}
+		]
+	}
 }
